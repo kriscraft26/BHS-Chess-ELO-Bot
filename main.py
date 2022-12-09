@@ -1,9 +1,14 @@
 from chessPlayer import Player
 from chessCalculator import elo
 krishna = Player("Krishna")
-kaleb = Player("Kaleb",500)
+kaleb = Player("Luka",1000)
 
-elo.elo_updater(kaleb,krishna,1)
+print(kaleb.getElo())
+print(krishna.getElo())
+elo.elo_updater(kaleb,krishna,True)
+print(kaleb.getElo())
+print(krishna.getElo())
+elo.elo_updater(krishna, kaleb, True)
 print(kaleb.getElo())
 print(krishna.getElo())
 

@@ -2,7 +2,16 @@ import math
 from chessPlayer import Player
 class elo:
     @staticmethod
-    def elo_updater(winner=Player,loser=Player, score=float):
+    def elo_updater(winner=Player,loser=Player, score=bool):
+        """
+        elo_updater takes the winner and loser players and updates their elo score
+        based on their elo, the K-factor, and the overall FIDE-based elo equation
+
+        Args:
+            winner: the Winning player of the chess match, but order does not matter if they tied. Defaults to Player.
+            loser: the losing player of the chess match, but order does not matter if they tied. Defaults to Player.
+            score: A score equal to True, which represents 1, is a win, a score of False, which represents 0.5, is a tie. Defaults to boolean.
+        """
         #Calculate the difference and find the ratio
         winner_ratio = ((loser.getElo() - winner.getElo())/400)
         loser_ratio = ((winner.getElo() - loser.getElo())/400)
@@ -16,12 +25,12 @@ class elo:
             return 40*(score-expect_score(player,ratio))
         
         #If the score is 1, which is a win, apply the proper score to the elo_change function
-        if(score == 1):
+        if(score == True):
             winner_change = elo_change(winner,winner_ratio,1) 
             loser_change = elo_change(loser,loser_ratio,0)
             
-        #If the score is 0.5, which is a draft, apply the proper score to the elo_change function
-        elif(score == 0.5):
+        #If the score is 0.5, which is a tie, apply the proper score to the elo_change function
+        elif(score == False):
             winner_change = elo_change(winner,winner_ratio,0.5) 
             loser_change = elo_change(loser,loser_ratio,0.5)
             

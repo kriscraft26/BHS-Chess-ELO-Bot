@@ -5,8 +5,6 @@ class Player:
     #Sets the player's name and elo, if no elo is given, default to 400
 
     def __init__(self, *args):
-
-
             if(isinstance(args[0],str)):
                 self.name = args[0]
                 if(len(args) > 1):

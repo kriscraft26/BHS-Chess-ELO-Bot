@@ -19,7 +19,7 @@ print(sheet.range("A2:A3"))
 
 
 krishna = Player("Krishna")
-kaleb = Player("Luka",1000)
+kaleb = Player("Luka",1500)
 
 print(kaleb.getElo())
 print(krishna.getElo())

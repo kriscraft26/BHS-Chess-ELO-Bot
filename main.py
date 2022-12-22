@@ -15,9 +15,11 @@ chesssheet = file.open("chess")
 sheet = chesssheet.sheet1
 print(sheet.range("A2:A3"))
 
-
-
-
+sheet.update_acell("A3", "Anisha")
+print(sheet.acell("A2").value)
+for name in sheet.range("A2:A3"):
+    test = name.value
+    print(test)
 krishna = Player("Krishna")
 kaleb = Player("Luka",1500)
 

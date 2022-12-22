@@ -1,9 +1,9 @@
 class Player:
+
     """
     This is a class for chess players
     """
     #Sets the player's name and elo, if no elo is given, default to 400
-
     def __init__(self, *args):
             if(isinstance(args[0],str)):
                 self.name = args[0]
@@ -11,7 +11,9 @@ class Player:
                     self.elo = args[1]
                 else:    
                     self.elo = 400
-
+        
+                    
+    
 
     def updateElo(self,elo_change):
         """
@@ -40,4 +42,6 @@ class Player:
             str: The name of the player 
         """
         return self.name
+    
+ 
     

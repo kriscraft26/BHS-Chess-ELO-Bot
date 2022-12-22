@@ -1,5 +1,7 @@
-class Player:
 
+
+
+class Player:
     """
     This is a class for chess players
     """
@@ -7,10 +9,12 @@ class Player:
     def __init__(self, *args):
             if(isinstance(args[0],str)):
                 self.name = args[0]
+
                 if(len(args) > 1):
                     self.elo = args[1]
                 else:    
                     self.elo = 400
+            
         
                     
     

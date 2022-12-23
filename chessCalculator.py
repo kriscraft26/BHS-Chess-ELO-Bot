@@ -1,5 +1,6 @@
 import math
 from chessPlayer import Player
+from googlesheet import elo_sheet
 class elo:
     @staticmethod
     def elo_updater(winner=Player,loser=Player, score=bool):
@@ -37,6 +38,11 @@ class elo:
         #Update the elo of each player
         winner.updateElo(winner_change)
         loser.updateElo(loser_change)
+        
+        #Updates the elo to the Google Sheet
+        test = elo_sheet()
+        test.update_sheet(winner)
+        test.update_sheet(loser)
         
         
         
